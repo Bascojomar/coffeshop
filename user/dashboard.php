@@ -91,7 +91,7 @@ while ($row = $result->fetch_assoc()) {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="dashboard.php">
+                <a class="nav-link" href="dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -106,7 +106,7 @@ while ($row = $result->fetch_assoc()) {
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="javascript:void(0);" onclick="ajax_function('cart.php','#maincontent');">
+                <a class="nav-link collapsed" href="javascript:void(0);" onclick="ajax_function('cart','#maincontent');">
                     <span>Order</span>
                 </a>
 
@@ -120,7 +120,7 @@ while ($row = $result->fetch_assoc()) {
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="../backend/logout.php">
+                <a class="nav-link collapsed" href="../backend/logout">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>logout</span>
                 </a>

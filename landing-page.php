@@ -48,7 +48,7 @@
                         <a href="#topics" class="nav-link">About Coffee</a>
                     </li>
                     <li class="nav-item ms-2 d-none d-md-inline">
-                        <a href="" class="btn btn-secondary" href="#pricing">Buy Now</a>
+                        <a href="index" class="btn btn-secondary" href="">Buy Now</a>
                     </li>
                 </ul>
             </div>

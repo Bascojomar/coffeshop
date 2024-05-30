@@ -4,6 +4,6 @@ $position = $_SESSION['position'];
 
 
 if ($position == 'admin' ){
-  header('location: ../admin/dashboard.php');
+  header('location: ../admin/dashboard');
 }
 ?>

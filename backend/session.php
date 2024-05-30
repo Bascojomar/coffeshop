@@ -5,5 +5,5 @@
      $count = mysqli_num_rows($select);
      
      if($count==0){
-          header("location:../index.php?error");
+          header("location:../index?error");
      }

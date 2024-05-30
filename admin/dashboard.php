@@ -79,7 +79,7 @@ while ($row = $result->fetch_assoc()) {
         while ($row = $result->fetch_assoc()) {
         $user = $row['username'];
         }
-            echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php">
+            echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -92,7 +92,7 @@ while ($row = $result->fetch_assoc()) {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="dashboard.php">
+                <a class="nav-link" href="dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -107,7 +107,7 @@ while ($row = $result->fetch_assoc()) {
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="javascript:void(0);" onclick="ajax_function('addproduct.php','#maincontent');">
+                <a class="nav-link collapsed" href="javascript:void(0);" onclick="ajax_function('addproduct','#maincontent');">
                     <span>Add Products</span>
                 </a>
 
@@ -198,11 +198,11 @@ while ($row = $result->fetch_assoc()) {
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="javascript:void(0);" onclick="ajax_function('my_account.php','#maincontent');">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="ajax_function('my_account','#maincontent');">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="javascript:void(0);" onclick="ajax_function('pass.php','#maincontent');">
+                                <a class="dropdown-item" href="javascript:void(0);" onclick="ajax_function('pass','#maincontent');">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Password
                                 </a>
