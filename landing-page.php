@@ -1,3 +1,7 @@
+<?php
+include "backend/database.php";
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,12 +72,21 @@
                     <p class="lead my-4 text-muted">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
                     <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
                 </div>
-                <div class="col-md-5 text-center d-none d-md-block">
-                    <img class="img-fluid" src="coffee.png" alt="coffee">
+<?php
+                $query = "SELECT * FROM inventory.parts_inventory LIMIT 1";
+                $result = $conn->query($query);
+
+                while ($row = $result->fetch_assoc()) {
+                    $image = $row['Image'];
+
+                echo'<div class="col-md-5 text-center d-none d-md-block">
+                <img src="'.$image.'" alt="Uploaded Image" / style="width: 50px;">
                 </div>
             </div>
         </div>
-    </section>
+    </section>';
+                }
+    ?>
 
     <section id="pricing" class="bg-body-secondary mt-5">
         <div class="container-lg"> 
