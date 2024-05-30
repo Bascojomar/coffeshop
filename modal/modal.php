@@ -17,10 +17,11 @@ include '../backend/database.php';
                 <FORM method="post" action="">
                 <input type="hidden" name="id" value="<?= $id ?>">
 
+                <input type="file" class="form-control my-2" name="Image">
                 <input type="text" class="form-control my-2" value="<?= $part_Name ?>" name="Name" placeholder="Product Name">
-                <input type="text" class="form-control my-2" name="Quantity" placeholder="Product Quantity">
-                <input type="text" class="form-control my-2" name="Price" placeholder="Product Price">
-                <input type="text" class="form-control my-2" name="Stack" placeholder="Product Stack">
+                <input type="text" class="form-control my-2" value="<?= $Quantity ?>" name="Quantity" placeholder="Product Quantity">
+                <input type="text" class="form-control my-2" value="<?= $Price ?>" name="Price" placeholder="Product Price">
+                <input type="text" class="form-control my-2" value="<?= $Stack ?>" name="Stack" placeholder="Product Stack">
                 <input type="submit" class="btn btn-primary form-control my-2" name="save">
 
             </form></div>

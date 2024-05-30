@@ -24,9 +24,10 @@ include "../backend/database.php";
     <div class="container d-flex justify-content-center align-items-center center-container mt-5">
         <div class="p-4 border rounded w-50 h-50 mt-5">
         <label class="">ADD MOTORCYCLE PARTS</label>
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
 
             <input type="date" class="form-control my-3" placeholder="Date" name="date">
+            <input type="file" class="form-control my-3" name="image">
             <input type="text" class="form-control my-3" placeholder="Name Product" name="product">
             <input type="number" class="form-control my-3" placeholder="Number Product" name="number">
             <input type="text" class="form-control my-3" placeholder="Quantity" name="quantity">

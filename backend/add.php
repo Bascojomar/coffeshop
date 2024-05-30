@@ -8,15 +8,51 @@ if (isset($_POST['submit'])) {
     $price = $_POST['price'];
     $stack = $_POST['stack'];
 
-    $sql = "INSERT INTO parts_inventory (part_Name, part_Number, Quantity, Price, Stack, Date) VALUES ('$product','$number','$quantity','$price','$stack','$date')";
-    $result = mysqli_query($conn, $sql);
+    if (isset($_FILES["image"]["name"]) && $_FILES["image"]["error"] == 0) {
+        // Define the upload directory
+        $uploadDir = "file/";
 
-    if ($result){
-        echo "<script>alert('success')</script>";
-    }else {
-        echo "<script>alert('not')</script>";
+        // Create the directory if it does not exist
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0777, true);
+        }
+
+        // Define the target file path
+        $uploadFile = $uploadDir . basename($_FILES["image"]["name"]);
+
+        // Move the uploaded file to the target directory
+        if (move_uploaded_file($_FILES["image"]["tmp_name"], $uploadFile)) {
+            // Prepare the SQL statement
+            $sql = "INSERT INTO parts_inventory (part_Name, part_Number, Quantity, Price, Stack, Date, Image) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            $stmt = mysqli_prepare($conn, $sql);
+
+            if ($stmt) {
+                // Bind parameters to the SQL statement
+                mysqli_stmt_bind_param($stmt, "ssissss", $product, $number, $quantity, $price, $stack, $date, $uploadFile);
+
+                // Execute the SQL statement
+                $result = mysqli_stmt_execute($stmt);
+
+                if ($result) {
+                    echo "<script>alert('Success')</script>";
+                } else {
+                    echo "<script>alert('Database insert failed')</script>";
+                }
+
+                // Close the statement
+                mysqli_stmt_close($stmt);
+            } else {
+                echo "<script>alert('Failed to prepare the SQL statement')</script>";
+            }
+        } else {
+            echo "<script>alert('Failed to upload the file')</script>";
+        }
+    } else {
+        echo "<script>alert('No file uploaded or file upload error')</script>";
+    }
 }
-}
+
+
 // edit
 if (isset($_POST['save'])) {
     $Quantity = $_POST['Quantity'];

@@ -5,7 +5,6 @@ include "log.php";
 include "../backend/add.php";
 
 
-
 $position = $_SESSION['position'];
 
 
@@ -232,6 +231,7 @@ while ($row = $result->fetch_assoc()) {
     $Quantity = $row['Quantity'];
     $Price = $row['Price'];
     $Stack = $row['Stack'];
+    $image = $row['Image'];
   echo'
     <div class="col-xl-3 col-md-6 mb-4">
     <div class="card border-left-info shadow h-100 py-2">
@@ -254,6 +254,10 @@ while ($row = $result->fetch_assoc()) {
                     <path fill-rule="evenodd" d="M14.854 3.646l-2.5-2.5a1 1 0 0 0-1.415 0l-9.586 9.586a1 1 0 0 0-0.271 0.464l-0.669 2.676a1 1 0 0 0 1.282 1.283l2.676-0.669a1 1 0 0 0 0.464-0.271l9.586-9.586a1 1 0 0 0 0-1.415zM3.207 14.207l0.665-2.658 1.993 1.993-2.658 0.665zm9.586-9.586l-0.665 2.658-1.993-1.993 2.658-0.665z"></path>
                 </svg>
             </button>
+
+                <div class="text-l text-center font-weight-bold text-info text-uppercase mb-1">
+                <img src="'.$image.'" alt="Uploaded Image" / style="width: 50px;">
+                </div><br>
 
                       <div class="text-l text-center font-weight-bold text-info text-uppercase mb-1">
                         '.$part_Name.'
